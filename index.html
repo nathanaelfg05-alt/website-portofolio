@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathanael | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --color-dark: #0f172a;
+      --color-primary: #1e3a8a;
+      --color-accent: #38bdf8;
+      --color-light: #f8fafc;
+      --color-text: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--color-light);
+      color: #1e293b;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar { background: var(--color-dark); }
+    .navbar-brand, .nav-link {
+      color: var(--color-light) !important;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .nav-link:hover { color: var(--color-accent) !important; }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-dark));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h1 { font-size: 3.5rem; font-weight: 700; animation: fadeInDown 1s ease; }
+
+    /* About Section */
+    #about { padding: 120px 20px 100px 20px; }
+    #about img {
+      width: 250px; height: 250px; object-fit: cover;
+      border-radius: 50%; border: 5px solid var(--color-accent);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- UPDATE: Hobbies Section with Particles --- */
+    #hobbies {
+      position: relative;
+      overflow: hidden; /* Mengunci partikel di dalam section */
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      color: var(--color-light);
+      padding: 100px 20px;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+      bottom: -100px;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      20% { opacity: 0.5; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    /* Card Upgrade: Glassmorphism */
+    .hobby-card {
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      border-radius: 20px;
+      padding: 40px 25px;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(50px);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .hobby-card.visible { opacity: 1; transform: translateY(0); }
+
+    .hobby-card:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .hobby-card i {
+      font-size: 2.8rem;
+      color: var(--color-accent);
+      margin-bottom: 15px;
+      transition: 0.4s;
+    }
+
+    .hobby-card:hover i { transform: scale(1.2) rotate(10deg); color: white; }
+
+    /* wave-bg adjustment */
+    .wave-bg {
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
+      background: linear-gradient(transparent, rgba(255,255,255,0.05));
+    }
+
+    /* Common Components */
+    .typed-text { color: var(--color-accent); border-right: 3px solid var(--color-accent); animation: blink 0.75s step-end infinite; }
+    @keyframes blink { 50% { border-color: transparent; } }
+    
+    .btn-next {
+      margin-top: 50px; background-color: var(--color-accent); color: var(--color-dark);
+      font-weight: 600; padding: 12px 30px; border-radius: 50px; border: none; transition: 0.3s;
+    }
+    .btn-next:hover { background-color: white; transform: scale(1.05); }
+
+    /* Contact & Footer */
+    #contact { padding: 100px 20px; text-align: center; }
+    .info-card {
+      display: flex; align-items: center; gap: 10px; background: white;
+      padding: 10px 18px; border-radius: 50px; text-decoration: none; color: var(--color-primary);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: 0.3s;
+    }
+    .info-card:hover { transform: translateY(-4px); background: var(--color-accent); color: white; }
+    footer { background: var(--color-dark); color: var(--color-text); padding: 25px; text-align: center; }
+    footer a { color: var(--color-accent); margin: 0 10px; font-size: 1.4rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#home">Nathanael</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <h1>Hello, I'm <span id="typed-name" class="typed-text"></span> 👋</h1>
+  <button class="btn-next" onclick="scrollToSection('about')">Explore More</button>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>About Me</h2>
+      <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent);" />
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img src="WhatsApp Image 2026-03-03 at 08.47.14.jpeg" alt="Nathanael" class="img-fluid" />
+      </div>
+      <div class="col-md-6">
+        <p class="fs-5">
+          I’m a 20-year-old IT student at <strong>Universitas Ma Chung</strong>. 
+          I specialize in <strong>Software Engineering</strong> with a focus on Java and Python.
+          My goal is to build secure and user-friendly digital solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="container text-center" style="position: relative; z-index: 2;">
+    <h2 class="text-white">My Hobbies</h2>
+    <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent); margin-bottom: 50px;" />
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="hobby-card">
+          <i class="fas fa-music"></i>
+          <h5>Music</h5>
+          <p>Exploring digital audio production and playing instruments.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hobby-card">
+          <i class="fas fa-laptop-code"></i>
+          <h5>Coding</h5>
+          <p>Developing Android apps (Java) and automating tasks with Python.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hobby-card">
+          <i class="fas fa-running"></i>
+          <h5>Running</h5>
+          <p>Maintaining a 6-8 pace to keep the mind sharp and body healthy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-bg"></div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>All Teams | Contact</h2>
+    <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent);" />
+    <div class="d-flex justify-content-center gap-4 flex-wrap mt-5">
+      <a href="https://machung.ac.id/" target="_blank" class="info-card">
+        <i class="fas fa-university"></i> <span>Universitas Ma Chung</span>
+      </a>
+      <a href="https://lockey-irawan.github.io/" target="_blank" class="info-card">
+        <i class="fas fa-user-tie"></i> <span>Project Manager</span>
+      </a>
+      <a href="mailto:nathanaelgalero@gmail.com" class="info-card">
+        <i class="fas fa-envelope"></i> <span>Email Me</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Nathanael Ferdynand. All Rights Reserved.</p>
+  <div class="mt-2">
+    <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/nathanaelgalero/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script>
+  // 1. Typing Effect
+  const names = ["Nathanael", "a Tech Enthusiast", "a Web Developer", "a Cyber Security Engineer"];
+  let count = 0, index = 0;
+  const typedName = document.getElementById("typed-name");
+
+  function type() {
+    if (count === names.length) count = 0;
+    let current = names[count];
+    typedName.textContent = current.slice(0, ++index);
+    if (index === current.length) {
+      setTimeout(() => { index = 0; count++; type(); }, 2000);
+    } else setTimeout(type, 100);
+  }
+  type();
+
+  // 2. Generate Floating Particles
+  const hobbiesSec = document.getElementById('hobbies');
+  for (let i = 0; i < 15; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    const size = Math.random() * 60 + 10 + 'px';
+    p.style.width = size;
+    p.style.height = size;
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = Math.random() * 10 + 5 + 's';
+    p.style.animationDelay = Math.random() * 5 + 's';
+    hobbiesSec.appendChild(p);
+  }
+
+  // 3. Scroll Animation
+  const hobbyCards = document.querySelectorAll(".hobby-card");
+  window.addEventListener("scroll", () => {
+    hobbyCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) card.classList.add("visible");
+    });
+  });
+
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

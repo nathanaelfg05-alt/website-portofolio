@@ -42,8 +42,27 @@
       align-items: center;
       text-align: center;
       padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
-    .hero h1 { font-size: 3.5rem; font-weight: 700; animation: fadeInDown 1s ease; }
+    .hero h1 { font-size: 3.5rem; font-weight: 700; animation: fadeInDown 1s ease; position: relative; z-index: 2; }
+    .hero .btn-next { position: relative; z-index: 2; }
+
+    .hero-bubble {
+      position: absolute;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 50%;
+      pointer-events: none;
+      bottom: -150px;
+      animation: heroBubbleUp linear infinite;
+    }
+    @keyframes heroBubbleUp {
+      0%   { transform: translateY(0) scale(1);   opacity: 0; }
+      15%  { opacity: 0.6; }
+      85%  { opacity: 0.3; }
+      100% { transform: translateY(-110vh) scale(1.4); opacity: 0; }
+    }
 
     /* About Section */
     #about { padding: 120px 20px 100px 20px; }
@@ -56,7 +75,7 @@
     /* --- UPDATE: Hobbies Section with Particles --- */
     #hobbies {
       position: relative;
-      overflow: hidden; /* Mengunci partikel di dalam section */
+      overflow: hidden;
       background: linear-gradient(135deg, #1e3a8a, #0f172a);
       color: var(--color-light);
       padding: 100px 20px;
@@ -77,7 +96,6 @@
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
 
-    /* Card Upgrade: Glassmorphism */
     .hobby-card {
       background: rgba(255, 255, 255, 0.1) !important;
       backdrop-filter: blur(12px);
@@ -113,7 +131,6 @@
 
     .hobby-card:hover i { transform: scale(1.2) rotate(10deg); color: white; }
 
-    /* wave-bg adjustment */
     .wave-bg {
       position: absolute; bottom: 0; left: 0; width: 100%; height: 100px;
       background: linear-gradient(transparent, rgba(255,255,255,0.05));
@@ -128,6 +145,102 @@
       font-weight: 600; padding: 12px 30px; border-radius: 50px; border: none; transition: 0.3s;
     }
     .btn-next:hover { background-color: white; transform: scale(1.05); }
+
+    /* ===== TAMBAHAN: Certifications Section ===== */
+    #certifications {
+      padding: 100px 20px;
+      background-color: #f1f5f9;
+    }
+
+    .cert-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+      border: 1px solid #e2e8f0;
+      transition: all 0.35s ease;
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    .cert-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(30, 58, 138, 0.12);
+      border-color: var(--color-accent);
+    }
+
+    .cert-logo {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    .cert-info { flex: 1; }
+
+    .cert-info h6 {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2px;
+      font-size: 0.95rem;
+    }
+
+    .cert-info .cert-issuer {
+      font-size: 0.82rem;
+      color: #475569;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .cert-info .cert-meta {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cert-info .cert-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .cert-credential {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      padding: 3px 10px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cert-credential:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+    /* ===== END Certifications ===== */
 
     /* Contact & Footer */
     #contact { padding: 100px 20px; text-align: center; }
@@ -151,6 +264,7 @@
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -174,7 +288,7 @@
       </div>
       <div class="col-md-6">
         <p class="fs-5">
-          I’m a 20-year-old IT student at <strong>Universitas Ma Chung</strong>. 
+          I'm a 20-year-old IT student at <strong>Universitas Ma Chung</strong>. 
           I specialize in <strong>Software Engineering</strong> with a focus on Java and Python.
           My goal is to build secure and user-friendly digital solutions.
         </p>
@@ -214,6 +328,76 @@
   <div class="wave-bg"></div>
 </section>
 
+<!-- ===== SECTION BARU: Certifications ===== -->
+<section id="certifications">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Licenses & Certifications</h2>
+      <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent);" />
+      <p class="text-muted mt-3">Verified credentials & Professional achievements</p>
+    </div>
+    <div class="row g-3 justify-content-center">
+
+      <!-- =============================== -->
+      <!-- GANTI ISI KARTU SESUAI MILIKMU  -->
+      <!-- =============================== -->
+
+      <div class="col-lg-6">
+        <div class="cert-card">
+          <div class="cert-logo"><i class="fas fa-shield-alt"></i></div>
+          <div class="cert-info">
+            <h6>Cisco Certificate CCNA : introduction to Network</h6>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+            <div class="cert-meta">
+              <span><i class="fas fa-calendar-alt"></i> Issued Jan 2025</span>
+              <span><i class="fas fa-infinity"></i> No Expiration</span>
+            </div>
+            <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" class="cert-credential" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Show Credential
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="cert-card">
+          <div class="cert-logo"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <h6>Oracle Database Design</h6>
+            <div class="cert-issuer">Oracle</div>
+            <div class="cert-meta">
+              <span><i class="fas fa-calendar-alt"></i> Issued Des 2024</span>
+              <span><i class="fas fa-infinity"></i> No Expiration</span>
+            </div>
+            <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" class="cert-credential" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Show Credential
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="cert-card">
+          <div class="cert-logo"><i class="fas fa-code"></i></div>
+          <div class="cert-info">
+            <h6>Oracle Databases Programming with SQL</h6>
+            <div class="cert-issuer">Oracle Academies</div>
+            <div class="cert-meta">
+              <span><i class="fas fa-calendar-alt"></i> Issued Des 2024</span>
+              <span><i class="fas fa-infinity"></i> No Expiration</span>
+            </div>
+            <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" class="cert-credential" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Show Credential
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===== END Certifications ===== -->
+
 <section id="contact">
   <div class="container">
     <h2>All Teams | Contact</h2>
@@ -242,10 +426,9 @@
 
 <script>
   // 1. Typing Effect
-  const names = ["Nathanael", "a Tech Enthusiast", "a Web Developer", "a Cyber Security Engineer"];
+  const names = ["Nathanael", "a Tech On", "a Web Developer", "a Cyber Security Engineer"];
   let count = 0, index = 0;
   const typedName = document.getElementById("typed-name");
-
   function type() {
     if (count === names.length) count = 0;
     let current = names[count];
@@ -270,12 +453,37 @@
     hobbiesSec.appendChild(p);
   }
 
+  // TAMBAHAN: Generate Bubble Particles untuk Hero Section
+  const heroSec = document.getElementById('home');
+  for (let i = 0; i < 18; i++) {
+    const b = document.createElement('div');
+    b.classList.add('hero-bubble');
+    const size = Math.random() * 70 + 15 + 'px';
+    b.style.width = size;
+    b.style.height = size;
+    b.style.left = Math.random() * 100 + '%';
+    b.style.animationDuration = Math.random() * 12 + 6 + 's';
+    b.style.animationDelay = Math.random() * 8 + 's';
+    heroSec.appendChild(b);
+  }
+
   // 3. Scroll Animation
   const hobbyCards = document.querySelectorAll(".hobby-card");
   window.addEventListener("scroll", () => {
     hobbyCards.forEach(card => {
       const rect = card.getBoundingClientRect();
       if (rect.top < window.innerHeight - 100) card.classList.add("visible");
+    });
+  });
+
+  // TAMBAHAN: Scroll Animation untuk Cert Cards
+  const certCards = document.querySelectorAll(".cert-card");
+  window.addEventListener("scroll", () => {
+    certCards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        setTimeout(() => card.classList.add("visible"), i * 120);
+      }
     });
   });
 

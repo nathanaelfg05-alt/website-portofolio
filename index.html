@@ -73,7 +73,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
     }
 
-    /* --- UPDATE: Hobbies Section with Particles --- */
+    /* Hobbies Section with Particles */
     #hobbies {
       position: relative;
       overflow: hidden;
@@ -147,7 +147,7 @@
     }
     .btn-next:hover { background-color: white; transform: scale(1.05); }
 
-    /* ===== TAMBAHAN: Certifications Section ===== */
+    /* Certifications Section */
     #certifications {
       padding: 100px 20px;
       background-color: #f1f5f9;
@@ -167,10 +167,7 @@
       transform: translateY(25px);
     }
 
-    .cert-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .cert-card.visible { opacity: 1; transform: translateY(0); }
 
     .cert-card:hover {
       transform: translateY(-5px);
@@ -179,69 +176,20 @@
     }
 
     .cert-logo {
-      width: 52px;
-      height: 52px;
-      min-width: 52px;
-      border-radius: 10px;
+      width: 52px; height: 52px; min-width: 52px; border-radius: 10px;
       background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem;
     }
 
-    .cert-info { flex: 1; }
-
-    .cert-info h6 {
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 2px;
-      font-size: 0.95rem;
-    }
-
-    .cert-info .cert-issuer {
-      font-size: 0.82rem;
-      color: #475569;
-      font-weight: 500;
-      margin-bottom: 3px;
-    }
-
-    .cert-info .cert-meta {
-      font-size: 0.75rem;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .cert-info .cert-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
+    .cert-info h6 { font-weight: 700; color: #0f172a; margin-bottom: 2px; font-size: 0.95rem; }
+    .cert-info .cert-issuer { font-size: 0.82rem; color: #475569; font-weight: 500; margin-bottom: 3px; }
+    .cert-info .cert-meta { font-size: 0.75rem; color: #94a3b8; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .cert-credential {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      border: 1px solid var(--color-primary);
-      padding: 3px 10px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.3s;
+      display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; font-size: 0.75rem; font-weight: 600;
+      color: var(--color-primary); border: 1px solid var(--color-primary); padding: 3px 10px; border-radius: 50px;
+      text-decoration: none; transition: 0.3s;
     }
-
-    .cert-credential:hover {
-      background: var(--color-primary);
-      color: white;
-    }
-    /* ===== END Certifications ===== */
+    .cert-credential:hover { background: var(--color-primary); color: white; }
 
     /* Contact & Footer */
     #contact { padding: 100px 20px; text-align: center; }
@@ -303,6 +251,7 @@
     <h2 class="text-white">My Hobbies</h2>
     <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent); margin-bottom: 50px;" />
     <div class="row g-4">
+      
       <div class="col-md-4">
         <div class="hobby-card">
           <i class="fas fa-music"></i>
@@ -310,13 +259,15 @@
           <p>Exploring digital audio production and playing instruments.</p>
         </div>
       </div>
+      
       <div class="col-md-4">
         <div class="hobby-card">
-          <i class="fas fa-laptop-code"></i>
-          <h5>Coding</h5>
-          <p>Developing Android apps (Java) and automating tasks with Python.</p>
+          <i class="fas fa-mountain"></i>
+          <h5>Hiking</h5>
+          <p>Menjelajahi jalur alam, mendaki puncak baru, dan menikmati kesegaran udara pegunungan.</p>
         </div>
       </div>
+      
       <div class="col-md-4">
         <div class="hobby-card">
           <i class="fas fa-running"></i>
@@ -324,12 +275,12 @@
           <p>Maintaining a 6-8 pace to keep the mind sharp and body healthy.</p>
         </div>
       </div>
+
     </div>
   </div>
   <div class="wave-bg"></div>
 </section>
 
-<!-- ===== SECTION BARU: Certifications ===== -->
 <section id="certifications">
   <div class="container">
     <div class="text-center mb-5">
@@ -338,10 +289,6 @@
       <p class="text-muted mt-3">Verified credentials & Professional achievements</p>
     </div>
     <div class="row g-3 justify-content-center">
-
-      <!-- =============================== -->
-      <!-- GANTI ISI KARTU SESUAI MILIKMU  -->
-      <!-- =============================== -->
 
       <div class="col-lg-6">
         <div class="cert-card">
@@ -367,7 +314,7 @@
             <h6>Oracle Database Design</h6>
             <div class="cert-issuer">Oracle</div>
             <div class="cert-meta">
-              <span><i class="fas fa-calendar-alt"></i> Issued Des 2024</span>
+              <span><i class="fas fa-calendar-alt"></i> Issued Dec 2024</span>
               <span><i class="fas fa-infinity"></i> No Expiration</span>
             </div>
             <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" class="cert-credential" target="_blank">
@@ -384,7 +331,7 @@
             <h6>Oracle Databases Programming with SQL</h6>
             <div class="cert-issuer">Oracle Academies</div>
             <div class="cert-meta">
-              <span><i class="fas fa-calendar-alt"></i> Issued Des 2024</span>
+              <span><i class="fas fa-calendar-alt"></i> Issued Dec 2024</span>
               <span><i class="fas fa-infinity"></i> No Expiration</span>
             </div>
             <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" class="cert-credential" target="_blank">
@@ -397,7 +344,6 @@
     </div>
   </div>
 </section>
-<!-- ===== END Certifications ===== -->
 
 <section id="contact">
   <div class="container">
@@ -427,7 +373,7 @@
 
 <script>
   // 1. Typing Effect
-  const names = ["Nathanael", "a Tech Enthusiast", "Software Engineer", "Artificial Intelegence Enthusiast"];
+  const names = ["Nathanael", "a Tech Enthusiast", "Software Engineer", "Artificial Intelligence Enthusiast"];
   let count = 0, index = 0;
   const typedName = document.getElementById("typed-name");
   function type() {
@@ -440,52 +386,45 @@
   }
   type();
 
-  // 2. Generate Floating Particles
+  // 2. Generate Floating Particles for Hobbies
   const hobbiesSec = document.getElementById('hobbies');
   for (let i = 0; i < 15; i++) {
     const p = document.createElement('div');
     p.classList.add('particle');
     const size = Math.random() * 60 + 10 + 'px';
-    p.style.width = size;
-    p.style.height = size;
+    p.style.width = size; p.style.height = size;
     p.style.left = Math.random() * 100 + '%';
     p.style.animationDuration = Math.random() * 10 + 5 + 's';
     p.style.animationDelay = Math.random() * 5 + 's';
     hobbiesSec.appendChild(p);
   }
 
-  // TAMBAHAN: Generate Bubble Particles untuk Hero Section
+  // 3. Generate Bubble Particles for Hero Section
   const heroSec = document.getElementById('home');
   for (let i = 0; i < 18; i++) {
     const b = document.createElement('div');
     b.classList.add('hero-bubble');
     const size = Math.random() * 70 + 15 + 'px';
-    b.style.width = size;
-    b.style.height = size;
+    b.style.width = size; b.style.height = size;
     b.style.left = Math.random() * 100 + '%';
     b.style.animationDuration = Math.random() * 12 + 6 + 's';
     b.style.animationDelay = Math.random() * 8 + 's';
     heroSec.appendChild(b);
   }
 
-  // 3. Scroll Animation
-  const hobbyCards = document.querySelectorAll(".hobby-card");
-  window.addEventListener("scroll", () => {
-    hobbyCards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) card.classList.add("visible");
-    });
-  });
-
-  // TAMBAHAN: Scroll Animation untuk Cert Cards
-  const certCards = document.querySelectorAll(".cert-card");
-  window.addEventListener("scroll", () => {
-    certCards.forEach((card, i) => {
-      const rect = card.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        setTimeout(() => card.classList.add("visible"), i * 120);
+  // 4. Scroll Animation for Hobby & Cert Cards
+  function handleScrollAnimation(elements, offset) {
+    elements.forEach((el, i) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - offset) {
+        setTimeout(() => el.classList.add("visible"), i * 120);
       }
     });
+  }
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation(document.querySelectorAll(".hobby-card"), 100);
+    handleScrollAnimation(document.querySelectorAll(".cert-card"), 80);
   });
 
   function scrollToSection(id) {

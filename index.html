@@ -197,6 +197,7 @@
       text-decoration: none; transition: 0.3s;
     }
     .cert-credential:hover { background: var(--color-primary); color: white; }
+
     /* Programming Languages Section */
     #languages {
       padding: 100px 20px;
@@ -231,70 +232,241 @@
       box-shadow:0 12px 30px rgba(0,0,0,0.35);
     }
 
-    
-
-.lang-card:hover i{
-  transform: rotate(8deg) scale(1.2);
-}
-    /* Contact & Footer */
-    #contact { padding: 100px 20px; text-align: center; }
-    .info-card {
-      display: flex; align-items: center; gap: 10px; background: white;
-      padding: 10px 18px; border-radius: 50px; text-decoration: none; color: var(--color-primary);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: 0.3s;
+    .lang-card:hover i{
+      transform: rotate(8deg) scale(1.2);
     }
-    .info-card:hover { transform: translateY(-4px); background: var(--color-accent); color: white; }
+
+    /* =============================================
+       CONTACT SECTION — IMPROVED STYLING
+       ============================================= */
+
+    #contact {
+      padding: 100px 20px 120px;
+      text-align: center;
+      background: linear-gradient(160deg, #f8fafc 0%, #e8f0fe 50%, #f0f9ff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle decorative background circle */
+    #contact::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    #contact::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(30,58,138,0.06) 0%, transparent 70%);
+      bottom: -100px; left: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    #contact > .container > hr {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 40px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Left column: stacked info cards */
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+      min-width: 200px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 14px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--color-primary);
+      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.09);
+      border: 1px solid rgba(30, 58, 138, 0.08);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .info-card i {
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+      color: var(--color-accent);
+      transition: 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      background: linear-gradient(135deg, var(--color-primary), #2563eb);
+      color: white;
+      box-shadow: 0 10px 28px rgba(30, 58, 138, 0.25);
+      border-color: transparent;
+    }
+
+    .info-card:hover i { color: white; }
+
+    /* Divider between left and right */
+    .contact-divider {
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(30,58,138,0.2), transparent);
+      align-self: stretch;
+      min-height: 200px;
+    }
+
+    /* Right column: refined form card */
+    .glass-form {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      border: 1px solid rgba(30, 58, 138, 0.1);
+      box-shadow: 0 8px 40px rgba(30, 58, 138, 0.1);
+      width: 340px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .glass-form:hover {
+      box-shadow: 0 16px 50px rgba(30, 58, 138, 0.15);
+    }
+
+    .glass-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .glass-form input,
+    .glass-form textarea {
+      border: 1.5px solid #e2e8f0;
+      padding: 11px 14px;
+      border-radius: 10px;
+      outline: none;
+      font-size: 0.88rem;
+      background: #f8fafc;
+      color: #1e293b;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .glass-form input::placeholder,
+    .glass-form textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    .glass-form input:focus,
+    .glass-form textarea:focus {
+      border-color: var(--color-accent);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+    }
+
+    .glass-form textarea {
+      resize: none;
+      min-height: 90px;
+    }
+
+    .glass-form button {
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-primary), #2563eb);
+      color: white;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .glass-form button:hover {
+      background: linear-gradient(135deg, #2563eb, var(--color-accent));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+    }
+
+    .glass-form button i {
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
     footer { background: var(--color-dark); color: var(--color-text); padding: 25px; text-align: center; }
     footer a { color: var(--color-accent); margin: 0 10px; font-size: 1.4rem; }
 
-
     /* Force Devicon Original Colors */
-
-.devicon-java-plain.colored { color:#f89820; }
-.devicon-python-plain.colored { color:#3776AB; }
-.devicon-mysql-plain.colored { color:#00758F; }
-.devicon-html5-plain.colored { color:#e34c26; }
-.devicon-css3-plain.colored { color:#264de4; }
-.devicon-javascript-plain.colored { color:#f7df1e; }
-.devicon-php-plain.colored { color:#777bb4; }
+    .devicon-java-plain.colored { color:#f89820; }
+    .devicon-python-plain.colored { color:#3776AB; }
+    .devicon-mysql-plain.colored { color:#00758F; }
+    .devicon-html5-plain.colored { color:#e34c26; }
+    .devicon-css3-plain.colored { color:#264de4; }
+    .devicon-javascript-plain.colored { color:#f7df1e; }
+    .devicon-php-plain.colored { color:#777bb4; }
   
-/* Languages bubble animation */
-#languages{
-  position: relative;
-  overflow: hidden;
-}
+    /* Languages bubble animation */
+    #languages {
+      position: relative;
+      overflow: hidden;
+    }
 
-.lang-bubble{
-  position:absolute;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:50%;
-  pointer-events:none;
-  bottom:-120px;
-  animation:langBubbleUp linear infinite;
-}
+    .lang-bubble {
+      position:absolute;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:50%;
+      pointer-events:none;
+      bottom:-120px;
+      animation:langBubbleUp linear infinite;
+    }
 
-@keyframes langBubbleUp{
-  0%{
-    transform:translateY(0) scale(1);
-    opacity:0;
-  }
-  20%{
-    opacity:0.5;
-  }
-  100%{
-    transform:translateY(-120vh) scale(1.4);
-    opacity:0;
-  }
-}
+    @keyframes langBubbleUp {
+      0%  { transform:translateY(0) scale(1); opacity:0; }
+      20% { opacity:0.5; }
+      100%{ transform:translateY(-120vh) scale(1.4); opacity:0; }
+    }
 
-/* supaya icon tidak ketutup bubble */
-.lang-card{
-  position:relative;
-  z-index:2;
-}
+    .lang-card { position:relative; z-index:2; }
 
-
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-divider { display: none; }
+      .glass-form { width: 100%; max-width: 340px; }
+      .contact-left { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -501,20 +673,44 @@
 
   </div>
 </section>
+
 <section id="contact">
   <div class="container">
     <h2>All Teams | Contact</h2>
     <hr class="mx-auto" style="width: 80px; border-top: 3px solid var(--color-accent);" />
-    <div class="d-flex justify-content-center gap-4 flex-wrap mt-5">
-      <a href="https://machung.ac.id/" target="_blank" class="info-card">
-        <i class="fas fa-university"></i> <span>Ma Chung University</span>
-      </a>
-      <a href="https://lockey-irawan.github.io/" target="_blank" class="info-card">
-        <i class="fas fa-user-tie"></i> <span>Project Manager</span>
-      </a>
-      <a href="mailto:nathanaelgalero@gmail.com" class="info-card">
-        <i class="fas fa-envelope"></i> <span>Email Me</span>
-      </a>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-left">
+        <a href="https://machung.ac.id/" target="_blank" class="info-card">
+          <i class="fas fa-university"></i>
+          <span>Ma Chung University</span>
+        </a>
+
+        <a href="https://lockey-irawan.github.io/" target="_blank" class="info-card">
+          <i class="fas fa-user-tie"></i>
+          <span>Project Manager</span>
+        </a>
+      </div>
+
+      <div class="contact-divider"></div>
+
+      <div class="glass-form">
+        <form onsubmit="sendEmail(event)">
+          
+          <input type="text" id="name" placeholder="Your Name" required>
+
+          <input type="email" id="email" placeholder="Your Email" required>
+
+          <textarea id="message" rows="3" placeholder="Your Message" required></textarea>
+
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send
+          </button>
+
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
@@ -588,22 +784,18 @@
   }
 
   // Generate Bubble Particles for Languages Section
-const langSec = document.getElementById('languages');
-
-for (let i = 0; i < 16; i++) {
-  const bubble = document.createElement('div');
-  bubble.classList.add('lang-bubble');
-
-  const size = Math.random() * 60 + 20 + 'px';
-  bubble.style.width = size;
-  bubble.style.height = size;
-
-  bubble.style.left = Math.random() * 100 + '%';
-  bubble.style.animationDuration = Math.random() * 10 + 6 + 's';
-  bubble.style.animationDelay = Math.random() * 6 + 's';
-
-  langSec.appendChild(bubble);
-}
+  const langSec = document.getElementById('languages');
+  for (let i = 0; i < 16; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('lang-bubble');
+    const size = Math.random() * 60 + 20 + 'px';
+    bubble.style.width = size;
+    bubble.style.height = size;
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.animationDuration = Math.random() * 10 + 6 + 's';
+    bubble.style.animationDelay = Math.random() * 6 + 's';
+    langSec.appendChild(bubble);
+  }
 </script>
 </body>
 </html>

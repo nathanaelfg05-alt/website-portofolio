@@ -821,9 +821,9 @@
     status.style.display = 'none';
 
     const templateParams = {
-      from_name:  document.getElementById('name').value,
-      from_email: document.getElementById('email').value,
-      message:    document.getElementById('message').value,
+      name:    document.getElementById('name').value,
+      email:   document.getElementById('email').value,
+      message: document.getElementById('message').value,
     };
 
     emailjs.send('service_c3jgl7c', 'template_jf2zgri', templateParams)
@@ -843,6 +843,7 @@
       });
   }
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  
 
   // Generate Bubble Particles for Languages Section
   const langSec = document.getElementById('languages');

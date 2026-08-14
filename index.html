@@ -176,6 +176,9 @@
     .cert-badge-circle i { font-size: 1.7rem; color: var(--badge-color, #fff); filter: grayscale(100%); opacity: 0.55; transition: var(--transition); }
     .cert-badge-circle .badge-logo-img { width: 40px; height: 40px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: var(--transition); }
     .cert-badge-circle .badge-fallback-icon { display: none; }
+    .cert-badge-circle.badge-full-image { background: transparent; border-color: transparent; }
+    .cert-badge-circle.badge-full-image .badge-logo-img { width: 82px; height: 82px; }
+    .cert-badge:hover .cert-badge-circle.badge-full-image { box-shadow: 0 0 28px var(--badge-glow, rgba(255,255,255,0.35)); border-radius: 50%; }
     .cert-badge-circle.img-failed .badge-fallback-icon { display: inline-block; }
     .cert-badge-circle.img-failed .badge-logo-img { display: none; }
     .cert-badge:hover .cert-badge-circle i { filter: grayscale(0%); opacity: 1; }
@@ -344,7 +347,7 @@
   <span class="hero-eyebrow"><span class="dot"></span> Open to Software Engineering Opportunities</span>
   <h1>Nathanael Galero</h1>
   <div class="hero-role"><span class="prompt">&gt;</span><span id="typed-role" class="typed-text"></span></div>
-  <p class="hero-sub">IT student at Ma Chung University focused on building secure, well-structured software with Java, Python, and SQL — backed by a growing foundation in networking and Cyber Security.</p>
+  <p class="hero-sub">IT student at Ma Chung University focused on building secure, well-structured software with Java, Python, and SQL — backed by a growing foundation in networking and cybersecurity.</p>
   <div class="hero-ctas">
     <a href="#projects" class="btn-primary-c">View My Work <i class="fas fa-arrow-right"></i></a>
     <a href="#contact" class="btn-outline-c">Let's Talk</a>
@@ -358,7 +361,7 @@
         <div class="about-photo-wrap d-inline-block">
           <span class="corner-tick tl"></span><span class="corner-tick br"></span>
           <img src="nanobanana.jpeg" alt="Nathanael Galero" />
-          <!-- <span class="status-chip"><span class="dot"></span> Available for internships</span> -->
+          <span class="status-chip"><span class="dot"></span> Available for internships</span>
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 reveal reveal-delay-1">
@@ -413,12 +416,7 @@
           <span class="project-tag-index">P01</span>
           <h5>Personal Portfolio Website</h5>
           <p>Designed and built this site from scratch — a responsive layout, scroll-based reveal animations, and a working contact form powered by EmailJS.</p>
-          <div class="project-stack">
-            <span class="stack-tag">HTML 5</span>
-            <span class="stack-tag">CSS 3</span>
-            <span class="stack-tag">JavaScript</span>
-            <span class="stack-tag">Bootstrap 5</span>
-          </div>
+          <div class="project-stack"><span class="stack-tag">HTML5</span><span class="stack-tag">CSS3</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Bootstrap 5</span></div>
           <a href="#home" class="project-link">View Site <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
@@ -427,23 +425,17 @@
           <span class="project-tag-index">P02</span>
           <h5>Website Gereja GPdI Anugrah Dampit</h5>
           <p>Built a complete website for GPdI Anugrah Dampit church, including a custom admin panel with full CRUD functionality for managing sermons, events, and announcements — from database design to a responsive front-end for the congregation.</p>
-          <div class="project-stack">
-            <span class="stack-tag">PHP</span>
-            <span class="stack-tag">MySQL</span>
-            <span class="stack-tag">HTML</span>
-            <span class="stack-tag">CSS</span>
-            <span class="stack-tag">JavaScript</span>
-            <span class="stack-tag">Maria DB</span></div>
+          <div class="project-stack"><span class="stack-tag">PHP</span><span class="stack-tag">MySQL</span><span class="stack-tag">CRUD</span></div>
         </div>
       </div>
-      <!-- <div class="col-lg-4 reveal reveal-delay-3">
+      <div class="col-lg-4 reveal reveal-delay-3">
         <div class="project-card is-placeholder">
           <span class="project-tag-index">P03</span>
           <h5>Add Another Project</h5>
           <p>A good second slot: a Python script, a small network design in Packet Tracer, or anything that shows your CCNA coursework in practice.</p>
           <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Networking</span></div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </section>
@@ -458,7 +450,10 @@
 
     <div class="badge-grid reveal reveal-delay-1">
       <a href="https://www.credly.com/badges/ed9fa16e-e00a-4a3e-b223-68459684e6e0/public_url" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-amber); --badge-tint: rgba(214,138,15,0.12); --badge-glow: rgba(214,138,15,0.45);">
-        <div class="cert-badge-circle"><i class="fas fa-book"></i></div>
+        <div class="cert-badge-circle badge-full-image">
+          <img class="badge-logo-img" src="ic3-badge.png" alt="IC3 Digital Literacy" onerror="this.parentElement.classList.add('img-failed'); this.parentElement.classList.remove('badge-full-image');">
+          <i class="fas fa-book badge-fallback-icon"></i>
+        </div>
         <div class="cert-badge-label">IC3 Digital Literacy<br>Certiport</div>
       </a>
       <a href="https://www.credly.com/badges/62b0eb59-f3b1-4e26-adc1-2981eece3609" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #1BA0D7; --badge-tint: rgba(27,160,215,0.14); --badge-glow: rgba(27,160,215,0.5);">
@@ -477,14 +472,14 @@
       </a>
       <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #F80000; --badge-tint: rgba(248,0,0,0.12); --badge-glow: rgba(248,0,0,0.4);">
         <div class="cert-badge-circle">
-          <img class="badge-logo-img" src="https://cdn.simpleicons.org/oracle" alt="Oracle" onerror="this.parentElement.classList.add('img-failed');">
+          <img class="badge-logo-img" src="oracle-logo.png" alt="Oracle" style="width:58px;height:auto;" onerror="this.parentElement.classList.add('img-failed');">
           <i class="fas fa-database badge-fallback-icon"></i>
         </div>
         <div class="cert-badge-label">Oracle Database<br>Design</div>
       </a>
       <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #F80000; --badge-tint: rgba(248,0,0,0.12); --badge-glow: rgba(248,0,0,0.4);">
         <div class="cert-badge-circle">
-          <img class="badge-logo-img" src="https://cdn.simpleicons.org/oracle" alt="Oracle" onerror="this.parentElement.classList.add('img-failed');">
+          <img class="badge-logo-img" src="oracle-logo.png" alt="Oracle" style="width:58px;height:auto;" onerror="this.parentElement.classList.add('img-failed');">
           <i class="fas fa-terminal badge-fallback-icon"></i>
         </div>
         <div class="cert-badge-label">Oracle SQL<br>Programming</div>
@@ -549,7 +544,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const roles = ["Software Engineering Student", "Web Developer", "Aspiring Front-End Engineer"];
+  const roles = ["Software Engineering Student", "Java & Python Developer", "Aspiring Backend Engineer"];
   let ri = 0, ci = 0;
   const roleEl = document.getElementById('typed-role');
   function typeRole() {

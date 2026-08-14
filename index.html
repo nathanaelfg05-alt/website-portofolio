@@ -173,7 +173,13 @@
       display: flex; align-items: center; justify-content: center;
       transition: var(--transition);
     }
-    .cert-badge-circle i { font-size: 1.7rem; color: var(--badge-color, #fff); transition: var(--transition); }
+    .cert-badge-circle i { font-size: 1.7rem; color: var(--badge-color, #fff); filter: grayscale(100%); opacity: 0.55; transition: var(--transition); }
+    .cert-badge-circle .badge-logo-img { width: 40px; height: 40px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: var(--transition); }
+    .cert-badge-circle .badge-fallback-icon { display: none; }
+    .cert-badge-circle.img-failed .badge-fallback-icon { display: inline-block; }
+    .cert-badge-circle.img-failed .badge-logo-img { display: none; }
+    .cert-badge:hover .cert-badge-circle i { filter: grayscale(0%); opacity: 1; }
+    .cert-badge:hover .cert-badge-circle .badge-logo-img { filter: grayscale(0%); opacity: 1; }
     .cert-badge:hover .cert-badge-circle {
       transform: scale(1.08);
       background: var(--badge-tint, rgba(255,255,255,0.08));
@@ -444,20 +450,32 @@
         <div class="cert-badge-circle"><i class="fas fa-book"></i></div>
         <div class="cert-badge-label">IC3 Digital Literacy<br>Certiport</div>
       </a>
-      <a href="https://www.credly.com/badges/62b0eb59-f3b1-4e26-adc1-2981eece3609" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-indigo); --badge-tint: rgba(79,70,229,0.14); --badge-glow: rgba(79,70,229,0.5);">
-        <div class="cert-badge-circle"><i class="fas fa-user-shield"></i></div>
+      <a href="https://www.credly.com/badges/62b0eb59-f3b1-4e26-adc1-2981eece3609" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #1BA0D7; --badge-tint: rgba(27,160,215,0.14); --badge-glow: rgba(27,160,215,0.5);">
+        <div class="cert-badge-circle">
+          <img class="badge-logo-img" src="https://cdn.simpleicons.org/cisco" alt="Cisco" onerror="this.parentElement.classList.add('img-failed');">
+          <i class="fas fa-user-shield badge-fallback-icon"></i>
+        </div>
         <div class="cert-badge-label">CCNA Cybersecurity<br>Cisco</div>
       </a>
-      <a href="https://www.credly.com/badges/82340f7c-8009-419f-8551-ecc045bd8fdf/linked_in?t=srbm8r" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-indigo); --badge-tint: rgba(79,70,229,0.14); --badge-glow: rgba(79,70,229,0.5);">
-        <div class="cert-badge-circle"><i class="fas fa-network-wired"></i></div>
+      <a href="https://www.credly.com/badges/82340f7c-8009-419f-8551-ecc045bd8fdf/linked_in?t=srbm8r" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #1BA0D7; --badge-tint: rgba(27,160,215,0.14); --badge-glow: rgba(27,160,215,0.5);">
+        <div class="cert-badge-circle">
+          <img class="badge-logo-img" src="https://cdn.simpleicons.org/cisco" alt="Cisco" onerror="this.parentElement.classList.add('img-failed');">
+          <i class="fas fa-network-wired badge-fallback-icon"></i>
+        </div>
         <div class="cert-badge-label">CCNA Networking<br>Cisco</div>
       </a>
-      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-emerald); --badge-tint: rgba(14,166,114,0.14); --badge-glow: rgba(14,166,114,0.5);">
-        <div class="cert-badge-circle"><i class="fas fa-database"></i></div>
+      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #F80000; --badge-tint: rgba(248,0,0,0.12); --badge-glow: rgba(248,0,0,0.4);">
+        <div class="cert-badge-circle">
+          <img class="badge-logo-img" src="https://cdn.simpleicons.org/oracle" alt="Oracle" onerror="this.parentElement.classList.add('img-failed');">
+          <i class="fas fa-database badge-fallback-icon"></i>
+        </div>
         <div class="cert-badge-label">Oracle Database<br>Design</div>
       </a>
-      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-emerald); --badge-tint: rgba(14,166,114,0.14); --badge-glow: rgba(14,166,114,0.5);">
-        <div class="cert-badge-circle"><i class="fas fa-terminal"></i></div>
+      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #F80000; --badge-tint: rgba(248,0,0,0.12); --badge-glow: rgba(248,0,0,0.4);">
+        <div class="cert-badge-circle">
+          <img class="badge-logo-img" src="https://cdn.simpleicons.org/oracle" alt="Oracle" onerror="this.parentElement.classList.add('img-failed');">
+          <i class="fas fa-terminal badge-fallback-icon"></i>
+        </div>
         <div class="cert-badge-label">Oracle SQL<br>Programming</div>
       </a>
     </div>

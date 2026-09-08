@@ -172,12 +172,13 @@
       border: 1px solid rgba(255,255,255,0.14);
       display: flex; align-items: center; justify-content: center;
       transition: var(--transition);
+      overflow: hidden;
     }
     .cert-badge-circle i { font-size: 1.7rem; color: var(--badge-color, #fff); filter: grayscale(100%); opacity: 0.55; transition: var(--transition); }
     .cert-badge-circle .badge-logo-img { width: 40px; height: 40px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: var(--transition); }
     .cert-badge-circle .badge-fallback-icon { display: none; }
     .cert-badge-circle.badge-full-image { background: transparent; border-color: transparent; }
-    .cert-badge-circle.badge-full-image .badge-logo-img { width: 82px; height: 82px; }
+    .cert-badge-circle.badge-full-image .badge-logo-img { width: 100px; height: 100px; object-fit: cover; object-position: 54% 54%; }
     .cert-badge:hover .cert-badge-circle.badge-full-image { box-shadow: 0 0 28px var(--badge-glow, rgba(255,255,255,0.35)); border-radius: 50%; }
     .cert-badge-circle.img-failed .badge-fallback-icon { display: inline-block; }
     .cert-badge-circle.img-failed .badge-logo-img { display: none; }
@@ -347,7 +348,7 @@
   <span class="hero-eyebrow"><span class="dot"></span> Open to Software Engineering Opportunities</span>
   <h1>Nathanael Galero</h1>
   <div class="hero-role"><span class="prompt">&gt;</span><span id="typed-role" class="typed-text"></span></div>
-  <p class="hero-sub">IT student at Ma Chung University focused on building secure, well-structured software with Java, Python, and SQL — backed by a growing foundation in Networking and Cyber Security.</p>
+  <p class="hero-sub">IT student at Ma Chung University focused on building secure, well-structured software with Java, Python, and SQL — backed by a growing foundation in networking and cybersecurity.</p>
   <div class="hero-ctas">
     <a href="#projects" class="btn-primary-c">View My Work <i class="fas fa-arrow-right"></i></a>
     <a href="#contact" class="btn-outline-c">Let's Talk</a>
@@ -361,14 +362,14 @@
         <div class="about-photo-wrap d-inline-block">
           <span class="corner-tick tl"></span><span class="corner-tick br"></span>
           <img src="nanobanana.jpeg" alt="Nathanael Galero" />
-          <!-- <span class="status-chip"><span class="dot"></span> Available for internships</span> -->
+          <span class="status-chip"><span class="dot"></span> Available for internships</span>
         </div>
       </div>
       <div class="col-lg-7 offset-lg-1 reveal reveal-delay-1">
         <span class="section-label">Who I Am</span>
         <h2 class="section-title">About Me</h2>
-        <p class="about-text mt-4">I'm an <strong>Information Technology student at Ma Chung University</strong>, majoring in Software Engineering with a focus on Web Development. My interest lies in building software that's not just functional, but <strong>secure, well-structured, and easy to maintain</strong> — a mindset shaped by both my coursework and a growing foundation in networking and cybersecurity through Cisco's CCNA program.</p>
-        <p class="about-text mt-3">I'm currently looking for opportunities, entry-level roles, or collaborative projects — where I can apply what I've learned on a real engineering team.</p>
+        <p class="about-text mt-4">I'm an <strong>Information Technology student at Ma Chung University</strong>, majoring in Software Engineering with a focus on Java and Python. My interest lies in building software that's not just functional, but <strong>secure, well-structured, and easy to maintain</strong> — a mindset shaped by both my coursework and a growing foundation in networking and cybersecurity through Cisco's CCNA program.</p>
+        <p class="about-text mt-3">I'm currently looking for opportunities — internships, entry-level roles, or collaborative projects — where I can apply what I've learned on a real engineering team.</p>
         <div class="mt-4">
           <span class="about-badge"><i class="fas fa-map-marker-alt"></i> Malang, Indonesia</span>
           <span class="about-badge"><i class="fas fa-graduation-cap"></i> IT Student, Ma Chung University</span>
@@ -416,12 +417,7 @@
           <span class="project-tag-index">P01</span>
           <h5>Personal Portfolio Website</h5>
           <p>Designed and built this site from scratch — a responsive layout, scroll-based reveal animations, and a working contact form powered by EmailJS.</p>
-          <div class="project-stack">
-            <span class="stack-tag">HTML 5</span>
-            <span class="stack-tag">CSS 3</span>
-            <span class="stack-tag">Java Script</span>
-            <span class="stack-tag">Bootstrap 5</span>
-          </div>
+          <div class="project-stack"><span class="stack-tag">HTML5</span><span class="stack-tag">CSS3</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Bootstrap 5</span></div>
           <a href="#home" class="project-link">View Site <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
@@ -430,25 +426,17 @@
           <span class="project-tag-index">P02</span>
           <h5>Website Gereja GPdI Anugrah Dampit</h5>
           <p>Built a complete website for GPdI Anugrah Dampit church, including a custom admin panel with full CRUD functionality for managing sermons, events, and announcements — from database design to a responsive front-end for the congregation.</p>
-          <div class="project-stack">
-            <span class="stack-tag">HTML</span>
-            <span class="stack-tag">CSS</span>
-            <span class="stack-tag">Java Script</span>
-            <span class="stack-tag">PHP</span>
-            <span class="stack-tag">MySQL</span>
-            <span class="stack-tag">Maria DB</span>
-          </div>
-          <a href="https://gpdianugerahdampit.site.je/" class="project-link">View Site <i class="fas fa-arrow-up-right-from-square"></i></a>
+          <div class="project-stack"><span class="stack-tag">PHP</span><span class="stack-tag">MySQL</span><span class="stack-tag">CRUD</span></div>
         </div>
       </div>
-      <!-- <div class="col-lg-4 reveal reveal-delay-3">
+      <div class="col-lg-4 reveal reveal-delay-3">
         <div class="project-card is-placeholder">
           <span class="project-tag-index">P03</span>
           <h5>Add Another Project</h5>
           <p>A good second slot: a Python script, a small network design in Packet Tracer, or anything that shows your CCNA coursework in practice.</p>
           <div class="project-stack"><span class="stack-tag">Python</span><span class="stack-tag">Networking</span></div>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </section>
@@ -497,14 +485,13 @@
         </div>
         <div class="cert-badge-label">Oracle SQL<br>Programming</div>
       </a>
-      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: #F80000; --badge-tint: rgba(248,0,0,0.12); --badge-glow: rgba(248,0,0,0.4);">
-        <div class="cert-badge-circle">
-          <img class="badge-logo-img" src="centri.jpeg" alt="Centri" style="width:58px;height:auto;" onerror="this.parentElement.classList.add('img-failed');">
-          <i class="fas fa-terminal badge-fallback-icon"></i>
+      <a href="https://www.linkedin.com/in/nathanael-galero-73578b2a8/details/certifications/" target="_blank" rel="noopener" class="cert-badge" style="--badge-color: var(--c-pink); --badge-tint: rgba(224,64,127,0.14); --badge-glow: rgba(224,64,127,0.5);">
+        <div class="cert-badge-circle badge-full-image">
+          <img class="badge-logo-img" src="centri.png" alt="Centri - Introduction to Penetration Testing" onerror="this.parentElement.classList.add('img-failed'); this.parentElement.classList.remove('badge-full-image');">
+          <i class="fas fa-user-secret badge-fallback-icon"></i>
         </div>
         <div class="cert-badge-label">Introduction Penetration Testing<br>Centri</div>
       </a>
-      
     </div>
   </div>
 </section>
@@ -518,7 +505,7 @@
     <div class="beyond-row reveal reveal-delay-1">
       <div class="beyond-item"><i class="fas fa-music"></i><div><h6>Music</h6><p>Digital audio production &amp; instruments</p></div></div>
       <div class="beyond-item"><i class="fas fa-mountain"></i><div><h6>Hiking</h6><p>New trails, new peaks</p></div></div>
-      <div class="beyond-item"><i class="fas fa-person-running"></i><div><h6>Running</h6><p>Steady 5–8 min/km pace</p></div></div>
+      <div class="beyond-item"><i class="fas fa-person-running"></i><div><h6>Running</h6><p>Steady 6–8 min/km pace</p></div></div>
     </div>
   </div>
 </section>
@@ -565,7 +552,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const roles = ["Software Engineering Student", "Web Developer", "Aspiring Front End Engineer", "Cyber Security Enthusiast", "Artificial Intelegence Enthusiast"];
+  const roles = ["Software Engineering Student", "Java & Python Developer", "Aspiring Backend Engineer"];
   let ri = 0, ci = 0;
   const roleEl = document.getElementById('typed-role');
   function typeRole() {
